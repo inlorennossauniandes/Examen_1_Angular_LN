@@ -1,0 +1,58 @@
+<div class="detail-wrapper">
+  <div class="detail-card">
+
+
+
+    <div class="detail-header">
+      <img [src]="usuario.avatarUrl" [alt]="usuario.name" class="detail-avatar" />
+      <div class="detail-header-info">
+        <h1>{{ usuario.name }}</h1>
+        <p class="detail-username">{{ '@' + usuario.username }}</p>
+        <span
+          class="role-badge"
+          [ngClass]="{
+            'role-developer': usuario.role === 'developer',
+            'role-admin': usuario.role === 'admin',
+            'role-designer': usuario.role === 'designer'
+          }"
+        >{{ usuario.role }}</span>
+      </div>
+    </div>
+
+    <div class="detail-body">
+
+      <div class="detail-item">
+        <span class="material-symbols-outlined">mail</span>
+        <div>
+          <p class="detail-label">Email</p>
+          <p class="detail-value">{{ usuario.email }}</p>
+        </div>
+      </div>
+
+      <div class="detail-item">
+        <span class="material-symbols-outlined">location_on</span>
+        <div>
+          <p class="detail-label">Ubicación</p>
+          <p class="detail-value">{{ usuario.location }}</p>
+        </div>
+      </div>
+
+      <div class="detail-item">
+        <span class="material-symbols-outlined">folder</span>
+        <div>
+          <p class="detail-label">Repositorios</p>
+          <p class="detail-value">{{ usuario.repoIds.length }} repositorios asociados</p>
+        </div>
+      </div>
+
+      <div class="detail-item">
+        <span class="material-symbols-outlined">tag</span>
+        <div>
+          <p class="detail-label">ID</p>
+          <p class="detail-value">#{{ usuario.id }}</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

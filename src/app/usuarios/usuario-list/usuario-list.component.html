@@ -8,52 +8,65 @@
 
 <div class="page-wrapper">
   <main class="main-content">
-    <div class="page-heading">
-      <div>
-        <h1>User Directory</h1>
-        <p>Manage and explore organization members across all teams.</p>
+
+    <!-- LISTA -->
+    <div *ngIf="!selected">
+      <div class="page-heading">
+        <div>
+          <h1>User Directory</h1>
+          <p>Manage and explore organization members across all teams.</p>
+        </div>
+      </div>
+
+      <div class="users-grid">
+        <div
+          class="user-card"
+          *ngFor="let usuario of usuarios | paginate: { itemsPerPage: 6, currentPage: currentPage }"
+        >
+          <div class="card-top">
+            <img [src]="usuario.avatarUrl" [alt]="usuario.name" class="avatar" />
+            <span
+              class="role-badge"
+              [ngClass]="{
+                'role-developer': usuario.role === 'developer',
+                'role-admin': usuario.role === 'admin',
+                'role-designer': usuario.role === 'designer'
+              }"
+            >{{ usuario.role }}</span>
+          </div>
+
+          <div class="card-info">
+            <h2>{{ usuario.name }}</h2>
+            <p class="username">{{ '@' + usuario.username }}</p>
+          </div>
+
+          <div class="card-location">
+            <span class="material-symbols-outlined">location_on</span>
+            <span>{{ usuario.location }}</span>
+          </div>
+
+          <div class="card-footer">
+            <button class="btn-detail" (click)="onSelected(usuario)">View Details</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="pagination-wrapper">
+        <pagination-controls
+          (pageChange)="currentPage = $event"
+          previousLabel="Anterior"
+          nextLabel="Siguiente"
+        ></pagination-controls>
       </div>
     </div>
 
-    <div class="users-grid">
-      <div
-        class="user-card"
-        *ngFor="let usuario of usuarios | paginate: { itemsPerPage: 6, currentPage: currentPage }"
-      >
-        <div class="card-top">
-          <img [src]="usuario.avatarUrl" [alt]="usuario.name" class="avatar" />
-          <span
-            class="role-badge"
-            [ngClass]="{
-              'role-developer': usuario.role === 'developer',
-              'role-admin': usuario.role === 'admin',
-              'role-designer': usuario.role === 'designer'
-            }"
-          >{{ usuario.role }}</span>
-        </div>
-
-        <div class="card-info">
-          <h2>{{ usuario.name }}</h2>
-          <p class="username">{{ '@' + usuario.username }}</p>
-        </div>
-
-        <div class="card-location">
-          <span class="material-symbols-outlined">location_on</span>
-          <span>{{ usuario.location }}</span>
-        </div>
-
-        <div class="card-footer">
-          <button class="btn-detail">View Details</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="pagination-wrapper">
-      <pagination-controls
-        (pageChange)="currentPage = $event"
-        previousLabel="Anterior"
-        nextLabel="Siguiente"
-      ></pagination-controls>
+    <!-- DETALLE -->
+    <div *ngIf="selected">
+      <button class="btn-volver" (click)="selected = false">
+        <span class="material-symbols-outlined">arrow_back</span>
+        Volver
+      </button>
+      <app-usuario-detail [usuario]="selectedUsuario"></app-usuario-detail>
     </div>
 
   </main>

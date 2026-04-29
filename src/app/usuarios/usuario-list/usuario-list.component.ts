@@ -12,6 +12,8 @@ export class UsuarioListComponent implements OnInit {
 
   usuarios: Array<Usuario> = [];
   currentPage: number = 1;
+  selectedUsuario!: Usuario;
+  selected = false;
   
   constructor(private usuarioService: UsuarioService) { }
 
@@ -19,6 +21,11 @@ getUsuarios(): void {
   this.usuarioService.getUsuarios().subscribe(usuarios => 
     this.usuarios = usuarios
 );}
+
+onSelected(usuario: Usuario): void {
+    this.selected = true;
+    this.selectedUsuario = usuario;
+  }
 
 
   ngOnInit() {
