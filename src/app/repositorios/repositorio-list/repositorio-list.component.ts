@@ -13,7 +13,7 @@ export class RespositorioListComponent implements OnInit {
   constructor(private repositorioService: RepositorioService) { }
 
   repositorios: Array<Repositorio> = [];
-
+  currentPage: number = 1;
 
   getRepositorios(): void {
     this.repositorioService.getRepositorios()

@@ -1,2 +1,13 @@
-<app-usuario-list></app-usuario-list>
-<app-repositorio-list></app-repositorio-list>
+<nav class="main-nav">
+  <span class="app-title">CodeProfiles</span>
+  <div class="nav-links">
+    <a routerLink="/usuarios" routerLinkActive="active">Usuarios</a>
+    <a routerLink="/repositorios" routerLinkActive="active">Repositorios</a>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
+
+<footer class="gh-footer">
+  <span>© 2025 CodeProfiles</span>
+</footer>

@@ -1,7 +1,53 @@
-<h2>Repositorios</h2>
+<div class="page-wrapper">
+  <main class="main-content">
+    <div class="page-heading">
+      <div>
+        <h1>Repositorios</h1>
+        <p>Explora todos los repositorios de la organización.</p>
+      </div>
+    </div>
 
-<ul>
-  <li *ngFor="let repositorio of repositorios">
-    <strong>{{ repositorio.name }}</strong> — {{ repositorio.language }} — ⭐ {{ repositorio.stars }}
-  </li>
-</ul>
+    <div class="repos-grid">
+      <div
+        class="repo-card"
+        *ngFor="let repositorio of repositorios | paginate: { itemsPerPage: 6, currentPage: currentPage }"
+      >
+        <div class="card-top">
+          <div class="repo-icon">
+            <span class="material-symbols-outlined">folder</span>
+          </div>
+          <span class="language-badge">{{ repositorio.language }}</span>
+        </div>
+
+        <div class="card-info">
+          <h2>{{ repositorio.name }}</h2>
+          <p class="description">{{ repositorio.description }}</p>
+        </div>
+
+        <div class="card-stats">
+          <div class="stat">
+            <span class="material-symbols-outlined">star</span>
+            <span>{{ repositorio.stars }}</span>
+          </div>
+          <div class="stat">
+            <span class="material-symbols-outlined">calendar_today</span>
+            <span>{{ repositorio.createdAt }}</span>
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <a [routerLink]="['/repositorios', repositorio.id]" class="btn-detail">View Details</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pagination-wrapper">
+      <pagination-controls
+        (pageChange)="currentPage = $event"
+        previousLabel="Anterior"
+        nextLabel="Siguiente"
+      ></pagination-controls>
+    </div>
+
+  </main>
+</div>

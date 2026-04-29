@@ -1,0 +1,56 @@
+<div class="detail-wrapper">
+  <div class="detail-card" *ngIf="repositorio">
+
+    <button class="btn-volver" (click)="goBack()">
+      <span class="material-symbols-outlined">arrow_back</span>
+      Volver
+    </button>
+
+    <div class="detail-header">
+      <div class="repo-icon">
+        <span class="material-symbols-outlined">folder</span>
+      </div>
+      <div class="detail-header-info">
+        <h1>{{ repositorio.name }}</h1>
+        <p class="detail-description">{{ repositorio.description }}</p>
+        <span class="language-badge">{{ repositorio.language }}</span>
+      </div>
+    </div>
+
+    <div class="detail-body">
+
+      <div class="detail-item">
+        <span class="material-symbols-outlined">star</span>
+        <div>
+          <p class="detail-label">Stars</p>
+          <p class="detail-value">{{ repositorio.stars }}</p>
+        </div>
+      </div>
+
+      <div class="detail-item">
+        <span class="material-symbols-outlined">calendar_today</span>
+        <div>
+          <p class="detail-label">Creado el</p>
+          <p class="detail-value">{{ repositorio.createdAt }}</p>
+        </div>
+      </div>
+
+      <div class="detail-item">
+        <span class="material-symbols-outlined">person</span>
+        <div>
+          <p class="detail-label">Owner ID</p>
+          <p class="detail-value">#{{ repositorio.ownerId }}</p>
+        </div>
+      </div>
+
+      <div class="detail-item">
+        <span class="material-symbols-outlined">tag</span>
+        <div>
+          <p class="detail-label">ID</p>
+          <p class="detail-value">#{{ repositorio.id }}</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

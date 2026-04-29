@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 32px;
+  background: #fff;
+  border-bottom: 1px solid #D0D7DE;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.app-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #24292f;
+}
+.nav-links {
+  display: flex;
+  gap: 24px;
+}
+.nav-links a {
+  font-size: 14px;
+  font-weight: 600;
+  color: #57606a;
+  text-decoration: none;
+  padding-bottom: 4px;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: #0969DA; }
+.nav-links a.active {
+  color: #0969DA;
+  border-bottom: 2px solid #0969DA;
+}
+
+/* FOOTER */
+.gh-footer {
+  background: #fff;
+  border-top: 1px solid #D0D7DE;
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 13px;
+  color: #57606a;
+}
