@@ -11,6 +11,7 @@ import { Usuario } from '../usuario';
 export class UsuarioListComponent implements OnInit {
 
   usuarios: Array<Usuario> = [];
+  currentPage: number = 1;
   
   constructor(private usuarioService: UsuarioService) { }
 
