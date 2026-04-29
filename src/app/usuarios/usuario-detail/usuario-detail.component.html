@@ -40,8 +40,12 @@
       <div class="detail-item">
         <span class="material-symbols-outlined">folder</span>
         <div>
-          <p class="detail-label">Repositorios</p>
-          <p class="detail-value">{{ usuario.repoIds.length }} repositorios asociados</p>
+           <p class="detail-label">Repositorios asociados</p>
+          <div class="detail-value repo-list">
+          <span class="repo-chip" *ngFor="let repoId of usuario.repoIds">
+            #{{ repoId }}
+          </span>
+          </div>
         </div>
       </div>
 

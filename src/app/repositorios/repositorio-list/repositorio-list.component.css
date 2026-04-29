@@ -204,3 +204,29 @@
 .pagination-wrapper ::ng-deep .ngx-pagination .pagination-next span {
   font-weight: 600;
 }
+
+/* MATERIAL ICONS */
+.star-icon {
+  color: #0969DA; /* 🔵 borde azul */
+  font-variation-settings: 
+    'FILL' 1,   /* relleno activado */
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+  
+  position: relative;
+}
+
+/* Truco para simular centro amarillo */
+.star-icon::after {
+  content: "star";
+  font-family: 'Material Symbols Outlined';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #facc15; /* ⭐ amarillo */
+  font-variation-settings: 
+    'FILL' 1;
+  
+  transform: scale(0.7); /* hace el centro más pequeño */
+}

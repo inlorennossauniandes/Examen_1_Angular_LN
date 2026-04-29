@@ -141,3 +141,13 @@
 .pagination-wrapper ::ng-deep .ngx-pagination .pagination-next span {
   font-weight: 600;
 }
+
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined' !important;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 18px;
+  display: inline-block;
+  line-height: 1;
+}

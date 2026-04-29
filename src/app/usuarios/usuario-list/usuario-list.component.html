@@ -5,8 +5,8 @@
     <div *ngIf="!selected">
       <div class="page-heading">
         <div>
-          <h1>User Directory</h1>
-          <p>Manage and explore organization members across all teams.</p>
+        <h1>Directorio de Usuarios</h1>
+        <p>Administra y explora los miembros de la organización en todos los equipos.</p>
         </div>
       </div>
 
@@ -32,13 +32,13 @@
             <p class="username">{{ '@' + usuario.username }}</p>
           </div>
 
-          <div class="card-location">
-            <span class="material-symbols-outlined">location_on</span>
-            <span>{{ usuario.location }}</span>
-          </div>
+        <div class="card-location">
+          <span class="material-symbols-outlined">location_on</span>
+          <span>{{ usuario.location }}</span>
+        </div>
 
           <div class="card-footer">
-            <button class="btn-detail" (click)="onSelected(usuario)">View Details</button>
+            <button class="btn-detail" (click)="onSelected(usuario)">Ver Detalles</button>
           </div>
         </div>
       </div>
