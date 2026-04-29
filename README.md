@@ -1,59 +1,53 @@
 # Examen1AngularLN
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.24.
+Aplicación desarrollada en Angular 19 que permite visualizar usuarios y repositorios de GitHub.
 
-## Development server
+## Descripción
 
-To start a local development server, run:
+La aplicación consume datos de usuarios y repositorios desde una API externa y los presenta en una interfaz moderna con navegación entre módulos.
+
+### Funcionalidades
+- 👤 Listado de usuarios con paginación y vista de detalle (maestro-detalle por componentes)
+- 📁 Listado de repositorios con paginación y vista de detalle (maestro-detalle por URL)
+- 🎨 Diseño responsive (1, 2 o 3 columnas según el dispositivo)
+
+## Requisitos previos
+
+- Node.js
+- Angular CLI 19.2.24
+
+## Instalación
+
+Clona el repositorio e instala las dependencias:
+
+```bash
+npm install
+```
+
+## Servidor de desarrollo
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Abre el navegador en `http://localhost:4200/`.
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## Ejecutar pruebas unitarias
 
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+## Build
 
 ```bash
-ng e2e
+ng build
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## Dependencias principales
 
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Angular 19.2.21
+- ngx-pagination
+- @faker-js/faker (dev)
+- TypeScript 5.7.3
+- RxJS 7.8.2
