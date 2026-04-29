@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RespositorioListComponent } from './respositorio-list/respositorio-list.component';
+import { RespositorioListComponent } from './repositorio-list/repositorio-list.component';
 
 @NgModule({
   imports: [
